@@ -12,5 +12,5 @@ this is for Big Corridor Assignment. It's has two parts, backend and frontend. T
 ```
 
 * The script will launch docker, rebuild the database, seed data, install the js packages on the backend and frontend and uses port 5003 for the frontend. Port 5001 and 5002 will be used for backend and database respectively.
-* When it's running, the frontend should be accessible via [http://localhost:5003/]()
+* When it's running, the frontend should be accessible via [http://localhost:5003/](http://localhost:5003)
 * You can quit the demo by sending a kill signal (`ctrl + c`)
