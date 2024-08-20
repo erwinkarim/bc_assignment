@@ -20,7 +20,7 @@ this is for Big Corridor Assignment. It's has two parts, backend and frontend. T
 ![termial](./pics/terminal.webp)
 After running `./run.sh`, this is what the terminal should look like when the app is ready. 
 
-![main page](./pics/terminal.webp)
+![main page](./pics/main_page.webp)
 Main page of the app
 
 ![editing page](./pics/editing.webp)
