@@ -12,7 +12,7 @@ import * as yup from 'yup';
 export default function GroceryCardForm({item, mode = 'update'}){
 
 	let primaryButtonLabel = mode == 'update' ? 'Update' : 'Create';
-	let returnPath = mode == 'update' ? `/groceries/${item.id}` : '/groceries';
+	let returnPath = mode == 'update' ? `/groceries/${item.id}` : '/';
 	let sendMethod = mode == 'update' ? 'POST' : 'PUT';
 
 	const router = useRouter();
@@ -105,7 +105,7 @@ export default function GroceryCardForm({item, mode = 'update'}){
 									</Form.Control.Feedback>
 							</Form.Group>
 							<div class="mt-2">
-								<Button disabled={!isValid} type='submit'>{primaryButtonLabel}</Button>
+								<Button className="me-2" disabled={!isValid} type='submit'>{primaryButtonLabel}</Button>
 								<Button variant='secondary' href={returnPath}>Cancel</Button>
 							</div>
 						</Form>

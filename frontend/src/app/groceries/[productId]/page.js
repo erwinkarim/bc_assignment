@@ -43,7 +43,7 @@ export default function Page() {
 			<GroceryCard item={grocery} mode={'show'}></GroceryCard>
 		</Col>
 		<Col>
-			<Button className='mr-2' href={`/groceries/${grocery.id}/edit`}>Edit</Button>
+			<Button className='me-2' href={`/groceries/${grocery.id}/edit`}>Edit</Button>
 			<Button variant='danger' onClick={deleteGrocery}>Delete</Button>
 		</Col>
 	</Row>

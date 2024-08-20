@@ -101,11 +101,10 @@ export default function Page() {
   <div>
       <Row>
         <Col>
-          <Form className='form-inline'>
+          <Form className='form-inline mt-2'>
             <div className='form-group'>
-              <FormLabel>Search</FormLabel>
               <FormControl value={searchKeyword} 
-                type='text' onChange={startLooking} placeholder='Enter keyword ...' />
+                type='text' onChange={startLooking} placeholder='Enter keyword to search ...' />
             </div>
           </Form>
         </Col>
@@ -115,12 +114,7 @@ export default function Page() {
           <Button href="/groceries/new">New</Button>
           <Button variant='link' onClick={sortGroceries}>Sort ({sortText})</Button>
         </Col>
-        <Col>
-          <p>conditonal rendering later ..</p>
-          <p>Load groceries here ...</p>
-          <p>SortMode: {sortMode}</p>
-        </Col>
-        { groceries.map((e) => { return <Col xs={12} md={6} className='mb-4'><GroceryCard item={e} /></Col> } )}
+        { groceries.length == 0 ? (<Col>Loading ...</Col>) : groceries.map((e) => { return <Col xs={12} md={6} className='mb-4'><GroceryCard item={e} /></Col> } )}
       </Row>
   </div>
   )
