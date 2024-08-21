@@ -6,6 +6,20 @@ this is for Big Corridor Assignment. It's has two parts, backend and frontend. T
 
 * You will need to [install Docker](https://docs.docker.com/engine/install/) on your machine. The whole thing runs 3 instance of docker (for the fronend, backend and MySQL)
 * Clone this repo on your machine.
+* create .env file and use the default values
+```
+MYSQLDB_USER=root
+MYSQLDB_ROOT_PASSWORD=123456
+MYSQLDB_DATABASE=bc_assignment
+MYSQLDB_LOCAL_PORT=5002
+MYSQLDB_DOCKER_PORT=3306
+
+NODE_LOCAL_PORT=5001
+NODE_DOCKER_PORT=3000
+
+NEXTJS_LOCAL_PORT=5003
+NEXTJS_DOCKER_PORT=3000
+```
 * To run the demo, you just execute the run script
 
 ```
