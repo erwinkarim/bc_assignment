@@ -16,7 +16,7 @@ export default function Page() {
   const [groceries, setGroceries] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [sortMode, setSortMode] = useState(0);
-  const [sortText, setSortText] = useState('id')
+  const [sortText, setSortText] = useState('a-z')
   const [searchKeyword, setSearchKeyword] = useState('');
 
   useEffect(() => {
@@ -33,8 +33,8 @@ export default function Page() {
 
   }, [groceries]);
 
-  function sortGroceries(){
-    sortMode > 1 ? setSortMode(0) : setSortMode(sortMode+1);
+  async function sortGroceries(){
+    await sortMode > 0 ? setSortMode(0) : setSortMode(sortMode+1);
 
     console.log('sortMode', sortMode);
 
@@ -42,11 +42,6 @@ export default function Page() {
     const newGroceries = [...groceries];
 
     if(sortMode == 0){
-      console.log('sort by id');
-      newGroceries.sort((a, b) => { return a.id < b.id ? -1 : 1; })
-      setSortText('id')
-    }
-    if(sortMode == 1){
       console.log('sort by a-z')
       setSortText('a-z');
       newGroceries.sort((a, b) => { 
@@ -59,7 +54,7 @@ export default function Page() {
         return 0;
       })
     }
-    if(sortMode == 2){
+    if(sortMode == 1){
       console.log('sort by z-a')
       setSortText('z-a');
       newGroceries.sort((a, b) => { 

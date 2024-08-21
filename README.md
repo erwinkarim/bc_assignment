@@ -5,6 +5,7 @@ this is for Big Corridor Assignment. It's has two parts, backend and frontend. T
 ## How to Run
 
 * You will need to [install Docker](https://docs.docker.com/engine/install/) on your machine. The whole thing runs 3 instance of docker (for the fronend, backend and MySQL)
+* Clone this repo on your machine.
 * To run the demo, you just execute the run script
 
 ```

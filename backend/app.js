@@ -52,7 +52,11 @@ app.get('/', async (req, res) => {
 app.get('/groceries', async (req, res) => {
   console.log('getting all groceries');
 
-  let groceries = await Grocery.findAll();
+  let groceries = await Grocery.findAll({
+    order: [
+      [ 'name', 'ASC' ]
+    ]
+  });
 
   // params to determine ordering
   res.json({
@@ -60,6 +64,18 @@ app.get('/groceries', async (req, res) => {
     results: groceries,
   });
 });
+
+// create new grocery item
+app.put('/groceries', async (req,res) => {
+  console.log('creating new groceries', req.body);
+  let grocery = await Grocery.create(req.body);
+
+  res.json({
+    msg: 'success',
+    results: grocery,
+  })
+});
+
 
 // get specific grocery
 app.get('/groceries/:productId', async (req, res) => {
@@ -71,18 +87,6 @@ app.get('/groceries/:productId', async (req, res) => {
     results: grocery,
   });
   // res.send(`looking for ${req.params.productId}`);
-});
-
-// create new grocery item
-app.put('/groceries/', async (req,res) => {
-  console.log('creating new groceries', req.body);
-  let grocery = await Grocery.create(req.body);
-
-  res.json({
-    msg: 'success',
-    results: grocery,
-  })
-
 });
 
 // update groceries

@@ -13,6 +13,7 @@ export default function GroceryCardForm({item, mode = 'update'}){
 
 	let primaryButtonLabel = mode == 'update' ? 'Update' : 'Create';
 	let returnPath = mode == 'update' ? `/groceries/${item.id}` : '/';
+	let sendPath = mode == 'update' ? `/groceries/${item.id}` : '/groceries';
 	let sendMethod = mode == 'update' ? 'POST' : 'PUT';
 
 	const router = useRouter();
@@ -49,7 +50,7 @@ export default function GroceryCardForm({item, mode = 'update'}){
 		// depending on mode, either update or create
 		// if success, go to the page of the product
 		// otherwise, some error message
-		fetch(`http://localhost:5001${returnPath}`, { method: sendMethod, body })
+		fetch(`http://localhost:5001${sendPath}`, { method: sendMethod, body })
 			.then((res) => res.json())
 			.then((data) => {
 				// show new page
